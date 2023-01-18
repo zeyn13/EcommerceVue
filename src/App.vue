@@ -4,7 +4,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view />
+  <router-view :baseURL="baseURL" :categories="categories" :products="products">
+  </router-view>
 </template>
 
 <script>
@@ -62,3 +63,5 @@ export default {
   color: #42b983;
 }
 </style>
+
+Navbar
