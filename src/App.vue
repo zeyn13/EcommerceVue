@@ -1,27 +1,31 @@
 <template>
-  <Navbar />
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view :baseURL="baseURL" :categories="categories" :products="products">
+  <router-view
+  :baseURL="baseURL"
+  :categories="categories"
+  :products="products"
+  >
   </router-view>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
 import axios from "axios";
+import Navbar from "./components/Navbar.vue";
 export default {
   components: { Navbar },
   data() {
     return {
       baseURL: "https://limitless-lake-55070.herokuapp.com/",
       products: [],
-      categories: [],
+      categories: []
     };
   },
   methods: {
     async fetchData() {
+
       // api call to get all the categories
       await axios
         .get(this.baseURL + "category/")
@@ -29,21 +33,22 @@ export default {
           this.categories = res.data;
         })
         .catch((err) => console.log("err", err));
-      // api call to get the products
-      await axios
-        .get(this.baseURL + "product/")
+
+        // api call to get the products
+
+        await axios
+        .get(this.baseURL + "products/")
         .then((res) => {
           this.products = res.data;
         })
         .catch((err) => console.log("err", err));
     },
   },
-  mounted() {
+  mounted(){
     this.fetchData();
-  },
+  }
 };
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -63,5 +68,3 @@ export default {
   color: #42b983;
 }
 </style>
-
-Navbar
