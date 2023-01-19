@@ -11,44 +11,39 @@
   </router-view>
 </template>
 
+
 <script>
-import axios from "axios";
 import Navbar from "./components/Navbar.vue";
+import axios from 'axios';
 export default {
   components: { Navbar },
   data() {
     return {
-      baseURL: "https://limitless-lake-55070.herokuapp.com/",
+      baseURL : "https://limitless-lake-55070.herokuapp.com/",
       products: [],
       categories: []
-    };
+    }
   },
   methods: {
     async fetchData() {
-
       // api call to get all the categories
-      await axios
-        .get(this.baseURL + "category/")
-        .then((res) => {
-          this.categories = res.data;
-        })
-        .catch((err) => console.log("err", err));
-
-        // api call to get the products
-
-        await axios
-        .get(this.baseURL + "products/")
-        .then((res) => {
-          this.products = res.data;
-        })
-        .catch((err) => console.log("err", err));
-    },
+      await axios.get(this.baseURL + "category/")
+      .then(res => {
+        this.categories = res.data
+      }).catch((err) => console.log('err', err));
+      // api call to get the products
+      await axios.get(this.baseURL + "product/")
+      .then(res => {
+        this.products = res.data
+      }).catch((err) => console.log('err', err));
+    }
   },
-  mounted(){
+  mounted() {
     this.fetchData();
   }
 };
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
