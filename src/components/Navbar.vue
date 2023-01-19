@@ -3,7 +3,7 @@
     <!-- Navbar content -->
     <!--    Logo-->
     <router-link class="navbar-brand" :to="{ name: 'Home' }">
-      <img id="logo" src="../assets/logo.png" />
+      <img id="logo" src="../assets/icon.png" />
     </router-link>
     <!--    Burger Button-->
     <button
@@ -51,6 +51,7 @@
     </div>
   </nav>
 </template>
+
 <script>
 export default {
   name: "Navbar",
