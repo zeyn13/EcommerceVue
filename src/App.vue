@@ -1,12 +1,13 @@
 <template>
-  <diV>
-    <Navbar />
-  </diV>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view :baseURL="baseURL" :categories="categories" :products="products">
+  <Navbar />
+
+  
+  <router-view v-if="categories && products" 
+  :baseURL="baseURL" 
+  :categories="categories" 
+  :products="products"
+  @fetchData="fetch"
+  >
   </router-view>
 </template>
 
@@ -18,8 +19,8 @@ export default {
   data() {
     return {
       baseURL: "https://limitless-lake-55070.herokuapp.com/",
-      products: [],
-      categories: [],
+      products: null,
+      categories: null,
     };
   },
   methods: {
