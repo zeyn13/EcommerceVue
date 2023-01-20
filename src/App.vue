@@ -6,7 +6,7 @@
   :baseURL="baseURL" 
   :categories="categories" 
   :products="products"
-  @fetchData="fetch"
+  @fetchData="fetchData"
   >
   </router-view>
 </template>
