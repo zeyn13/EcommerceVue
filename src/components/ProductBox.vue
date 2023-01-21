@@ -8,7 +8,10 @@
           />
       </div>
       <div class="card-body">
+        <router-link :to="{name: 'ShowDetails', params: {id : product.id}}">
           <h5 class="card-title">{{ product.name }}</h5>
+        </router-link>
+         
           <p class="card-text">
               {{ product.description.substring(0, 65)}}...
           </p>
@@ -21,14 +24,23 @@
   
 </template>
 <script>
+import router from '@/router';
+
   export default {
-      name: "ProductBox",
-      props: ["product"]
-  }
+    name: "ProductBox",
+    props: ["product"],
+    components: { router }
+}
 </script>
 <style scoped>
 .card-img-top {
   object-fit: cover;
+}
+a {
+  text-decoration: none;
+}
+.card-title{
+  color: #484848;
 }
 </style>
 
