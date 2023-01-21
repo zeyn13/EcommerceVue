@@ -1,23 +1,20 @@
 <template>
-  <nav class="navbar bg-light">
-    <div class="container-fluid">
-      <form class="d-flex" role="Search">
-        <input id="input"
+  <nav class="navbar bg-dark">
+    <div style="display:flex; justify-content:space-between">
+  <div><form class="d-flex" role="admin">
+        <input
           class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
-        />
-        <router-link :to="{ name: 'Admin' }" style="">
-          Admin
-        </router-link>
-      </form>
-    </div>
+        /> </form></div>
+</div>
+<router-link
+    :to="{ name: 'Admin' }"
+    style="padding: 10px; display: flex; justify-content: space-between"
+  >
+    Admin
+  </router-link>
   </nav>
 </template>
-<style scoped>
 
-input{
-text-align: justify;
-}
-</style>
