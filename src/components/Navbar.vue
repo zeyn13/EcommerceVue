@@ -39,6 +39,10 @@ export default {
           title: "SignUp",
           link: "/signup",
         },
+        {
+          title: "SignIn",
+          link: "/signin",
+        },
       ],
     };
   },

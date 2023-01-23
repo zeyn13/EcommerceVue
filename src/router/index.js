@@ -11,6 +11,7 @@ import EditProduct from "../views/Product/EditProduct";
 import ShowDetails from "../views/Product/ShowDetails";
 import ListProducts from "../views/Category/ListProducts";
 import Signup from "../views/Signup";
+import Signin from '../views/Signin';
 
 const routes = [
   {
@@ -75,6 +76,11 @@ const routes = [
     name: "Signup",
     component: Signup,
   },
+  {
+    path: '/signin',
+    name: 'Signin',
+    component: Signin
+  }
 ];
 
 const router = createRouter({
