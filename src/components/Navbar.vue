@@ -1,7 +1,16 @@
 <template>
   <nav>
+    <form class="d-flex" role="admin">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search Items"
+        aria-label="Search"
+      />
+    </form>
     <div class="menu-item"><a href="/">Home</a></div>
     <div class="menu-item"><a href="#">About</a></div>
+    <Dropdown title="Browse" :items="browse" />
     <Dropdown title="Account" :items="account" />
     <div class="menu-item"><a href="admin">Admin</a></div>
   </nav>
@@ -14,20 +23,21 @@ export default {
   components: {
     Dropdown,
   },
+
   data() {
     return {
       account: [
         {
+          title: "Wishlist",
+          link: "#",
+        },
+        {
+          title: "Log In",
+          link: "#",
+        },
+        {
           title: "SignUp",
           link: "/signup",
-        },
-        {
-          title: "Design",
-          link: "#",
-        },
-        {
-          title: "Videos",
-          link: "#",
         },
       ],
     };

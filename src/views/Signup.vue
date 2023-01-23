@@ -78,3 +78,61 @@
     <!-- form -->
   </div>
 </template>
+<script>
+import axios from "axios";
+import swal from "sweetalert";
+export default {
+  props: ["baseURL"],
+  data() {
+    return {
+      email: null,
+      firstName: null,
+      lastName: null,
+      password: null,
+      confirmPassword: null,
+    };
+  },
+  methods: {
+    async signup(e) {
+      e.preventDefault();
+      if (this.password === this.confirmPassword) {
+        // call signup api
+        const user = {
+          email: this.email,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          password: this.password,
+        };
+        console.log("user", user);
+        await axios
+          .post(`${this.baseURL}user/signup`, user)
+          .then(() => {
+            this.$router.replace("/");
+            swal({
+              text: "User signup successful, please login",
+              icon: "success",
+            });
+          })
+          .catch((err) => console.log("err", err));
+      } else {
+        // show some error
+        swal({
+          text: "passwords dont match",
+          icon: "error",
+        });
+      }
+    },
+  },
+};
+</script>
+<style scoped>
+.btn-primary {
+  background-color: #f0c14b;
+  color: #000;
+}
+@media screen and (min-width: 992 px) {
+  #signup {
+    width: 40%;
+  }
+}
+</style>
