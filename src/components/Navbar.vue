@@ -1,25 +1,62 @@
 <template>
-  <nav class="navbar bg-dark">
-    <div style="display: flex; justify-content: space-between">
-      <div>
-        <form class="d-flex" role="admin">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Search Items"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <div class="dropdown-menu" aria-labelledby="navbarAccount">
-            <router-link class="dropdown-item" :to="{ name: 'Signup' }"
-              >Sign up
-          </router-link>
-          </div>
-        </form>
-      </div>
-    </div>
-    <router-link :to="{ name: 'Admin' }"> Admin </router-link>
+  <nav>
+    <div class="menu-item"><a href="/">Home</a></div>
+    <div class="menu-item"><a href="#">About</a></div>
+    <Dropdown title="Account" :items="account" />
+    <div class="menu-item"><a href="admin">Admin</a></div>
   </nav>
 </template>
+
+<script>
+import Dropdown from "./Dropdown";
+export default {
+  name: "navbar",
+  components: {
+    Dropdown,
+  },
+  data() {
+    return {
+      account: [
+        {
+          title: "SignUp",
+          link: "/signup",
+        },
+        {
+          title: "Design",
+          link: "#",
+        },
+        {
+          title: "Videos",
+          link: "#",
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style>
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .menu-item {
+  color: rgb(166, 161, 161);
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  transition: 0.4s;
+}
+nav .menu-item.active,
+nav .menu-item:hover {
+  background-color: rgb(107, 87, 87);
+  border-bottom-color: #ff5858;
+}
+nav .menu-item a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
