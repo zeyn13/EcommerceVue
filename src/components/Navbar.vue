@@ -87,7 +87,7 @@ export default {
   margin-right: 20px;
 }
 a {
-  color: white;
+  color: black;
 }
 .nav-link {
   color: white;
