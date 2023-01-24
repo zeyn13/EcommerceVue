@@ -130,7 +130,7 @@ export default {
   background-color: #f0c14b;
   color: #000;
 }
-@media screen and (min-width: 992 px) {
+@media screen and (min-width: 992px) {
   #signup {
     width: 40%;
   }
