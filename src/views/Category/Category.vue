@@ -30,9 +30,7 @@ export default {
       baseURL: "https://limitless-lake-55070.herokuapp.com",
     };
   },
-  methods: {
-
-  },
+  methods: {},
   mounted() {},
 };
 </script>

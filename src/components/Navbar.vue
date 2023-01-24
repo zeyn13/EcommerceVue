@@ -1,4 +1,5 @@
 <template>
+
   <nav class="navbar bg-dark">
     <!-- Navbar content -->
     <!--    Logo-->
@@ -96,3 +97,4 @@ a {
 }
 </style>
 
+  

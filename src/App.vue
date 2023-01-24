@@ -1,19 +1,16 @@
 <template>
   <Navbar />
-
-  
-  <router-view v-if="categories && products" style="min-height: 60vh"
-  :baseURL="baseURL" 
-  :categories="categories" 
-  :products="products"
-  @fetchData="fetchData"
+  <router-view
+    v-if="categories && products"
+    style="min-height: 60vh"
+    :baseURL="baseURL"
+    :categories="categories"
+    :products="products"
+    @fetchData="fetchData"
   >
   </router-view>
-
-<!-- footer-->
-<Footer >
-  </Footer>
-
+  <!--  footer-->
+  <Footer />
 </template>
 
 <script>
@@ -38,9 +35,7 @@ export default {
           this.categories = res.data;
         })
         .catch((err) => console.log("err", err));
-
       // api call to get the products
-
       await axios
         .get(this.baseURL + "product/")
         .then((res) => {
@@ -54,6 +49,7 @@ export default {
   },
 };
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
