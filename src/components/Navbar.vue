@@ -1,14 +1,12 @@
 <template>
-
   <nav class="navbar bg-dark">
     <!-- Navbar content -->
     <!--    Logo-->
     <router-link class="navbar-brand" to="{ name: 'Home' }">
-      <img id="logo" src="../assets/icon.png" />
+      <img id="logo" src="../assets/logo.png" width="40" height="100" />
     </router-link>
- 
 
-<!--    Burger Button-->
+    <!--    Burger Button-->
     <button
       class="navbar-toggler"
       type="button"
@@ -19,13 +17,12 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
 
-
-<div class="navbar-toggler-collapse" id="navbarSupportedContent">
-  <!--SearchBar-->
-  <form class="form-inline ml-auto mr-auto">
-    <div class="input-group">
+    <div class="navbar-toggler-collapse" id="navbarSupportedContent">
+      <!--SearchBar-->
+      <form class="form-inline ml-auto mr-auto">
+        <div class="input-group">
           <input
             size="100"
             type="text"
@@ -51,9 +48,9 @@
             </span>
           </div>
         </div>
-  </form>
+      </form>
 
-    <!-- dropdown for browse -->
+      <!-- dropdown for browse -->
       <!-- dropdown for account -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
@@ -77,7 +74,7 @@
       </ul>
     </div>
   </nav>
-  </template>
+</template>
 <script>
 export default {
   name: "Navbar",
@@ -96,5 +93,3 @@ a {
   color: white;
 }
 </style>
-
-  
