@@ -10,6 +10,8 @@ import EditCategory from "../views/Category/EditCategory";
 import EditProduct from "../views/Product/EditProduct";
 import ShowDetails from "../views/Product/ShowDetails";
 import ListProducts from "../views/Category/ListProducts";
+import Singup from "../views/Signup";
+import Signin from "../views/Signin";
 
 
 const routes = [
@@ -69,7 +71,21 @@ const routes = [
     path: '/product/show/:id',
     name: 'ShowDetails',
     component: ShowDetails
-  }
+  },
+
+    // signup and singin 
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Singup
+    },
+
+    {
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
+    }
+
 ]
 
 const router = createRouter({
