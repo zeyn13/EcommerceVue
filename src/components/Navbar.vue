@@ -67,7 +67,7 @@
               v-if="token"
               class="dropdown-item"
               :to="{ name: 'WishList' }"
-              >Wishlist
+              >WishList
             </router-link>
             <router-link
               v-if="!token"
