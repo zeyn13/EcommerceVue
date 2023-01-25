@@ -14,6 +14,7 @@ import ListProducts from "../views/Category/ListProducts";
 
 import Singup from "../views/Signup";
 import Signin from "../views/Signin";
+import Cart from "../views/Cart";
 
 
 
@@ -95,6 +96,12 @@ const routes = [
       name: 'WishList',
       component: WishList
     },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
+    },
+
 
 
 
